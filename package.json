@@ -26,7 +26,6 @@
   "dependencies": {
     "browser-sync": "~ 1.8.0",
     "gulp": "~ 3.8.8",
-    "gulp-coffee": "~ 2.2.0",
     "gulp-concat": "~ 2.4.1",
     "gulp-gh-pages": "~ 0.4.0",
     "gulp-include": "~ 1.1.0",

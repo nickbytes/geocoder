@@ -6,12 +6,11 @@ var gulp = require('gulp'),
   sass = require('gulp-ruby-sass'),
   neat = require('node-neat').includePaths,
   sourcemaps = require('gulp-sourcemaps'),
-  coffee = require('gulp-coffee'),
   deploy = require('gulp-gh-pages');
 
 var paths = {
   haml: './source/views/*.haml',
-  coffee: './source/assets/javascripts/**/*.coffee',
+  javascripts: './source/assets/javascripts/**/*.js',
   scss: './source/assets/stylesheets/**/*.scss',
   images: './source/assets/images/*',
   fonts: './source/assets/fonts/*'
@@ -33,18 +32,14 @@ gulp.task('stylesheets', function() {
     .pipe(gulp.dest('./build/assets/stylesheets'));
 });
 
-// Coffeescript
+// Javascripts, not Coffeescript
 gulp.task('javascripts', function() {
-  return gulp.src(paths.coffee)
+  return gulp.src(paths.javascripts)
     .pipe(sourcemaps.init())
     .pipe(include())
-    .pipe(coffee())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/assets/javascripts'));
 });
-
-coffeeStream = coffee({bare: true});
-coffeeStream.on('error', function(err) {});
 
 // Copy images
 gulp.task('images', function () {
@@ -73,7 +68,7 @@ gulp.task('server', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.haml, ['views']);
   gulp.watch(paths.scss, ['stylesheets']);
-  gulp.watch(paths.coffee, ['javascripts']);
+  gulp.watch(paths.javascripts, ['javascripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.fonts, ['fonts']);
   gulp.watch('./build/*.html', browsersync.reload);
