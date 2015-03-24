@@ -36,4 +36,10 @@
      codeAddress();
   });
 
+  $("#address__field").keypress(function(e){
+    if (e.which == 13){
+      $("#address__submit").click();
+    }
+  });
+
 })();
