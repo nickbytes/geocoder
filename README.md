@@ -1,14 +1,6 @@
-# Proteus - Gulp, *Decaf*
+# Geocoder
 
-## About *Decaf* version
-[Proteus](http://github.com/thoughtbot/proteus) is a collection of useful
-starter kits to help you prototype faster made by the great people at [thoughtbot](http://thoughtbot.com). It follows the
-[thoughtbot styleguide](https://github.com/thoughtbot/guides) and includes their
-favorite front end tools.
-
-But I don't typically use [Coffeescript](http://coffeescript.org). I've got nothing against it, I just don't know it well enough to be productive.
-
-This version uses Javascript instead.
+Geocode any address.
 
 Includes
 --------
