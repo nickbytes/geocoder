@@ -22,7 +22,7 @@
             map: map,
             position: results[0].geometry.location
         });
-        document.getElementById('show__geo').innerHTML = results[0].geometry.location.D + ", " + results[0].geometry.location.k;
+        document.getElementById('show__geo').innerHTML = results[0].geometry.location.k + ", " + results[0].geometry.location.D;
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
         document.getElementById('show__geo').innerHTML = '';
